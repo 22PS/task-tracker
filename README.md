@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# Task Tracker Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a web-based Task Tracker application designed for managing tasks effectively. The application allows users to add, edit, delete, and track tasks with various details such as priority, status, due dates, and time spent on each task. The dashboard also includes a graph to visualize the number of tasks worked on per day.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Authentication**: Mock login with predefined credentials.
+  - **Username**: `test`
+  - **Password**: `test1234`
+- **Task Management**: Users can create, edit, delete, and view tasks with details including:
+  - Task title and description
+  - Priority (High, Medium, Low)
+  - Status (Pending, In Progress, Completed)
+  - Due date
+  - Time spent on each task, with the option to log time.
+- **Task Filtering**: Filter tasks based on priority (High, Medium, Low) and status (Pending, In Progress, Completed).
+- **Time Tracking**: Track the time spent on each task in hours and minutes.
+- **Task Activity Visualization**: A graph that displays the count of tasks worked on per day, helping users understand their productivity patterns.
+- **Error Handling**: User-friendly error messages for empty fields when adding tasks and invalid credentials on login.
 
-### `npm start`
+## Assumptions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Authentication**: This project uses mock authentication for testing purposes. A single hardcoded user can log in using the credentials provided above.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technology Stack
 
-### `npm test`
+- **React.js**: For building the user interface.
+- **Redux**: For managing global state across components.
+- **Tailwind CSS**: For styling the application.
+- **Chart.js**: For rendering charts to visualize task data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Node.js**: Ensure Node.js is installed on your machine.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
 
-### `npm run eject`
+    ```bash
+    git clone https://github.com/22PS/task-tracker
+    cd task-tracker
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Install dependencies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Running the Application
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Start the development server:
 
-## Learn More
+   ```bash
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Open your browser and navigate to http://localhost:3000 to view the Task Tracker dashboard.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Log in using the mock credentials:
 
-### Code Splitting
+- **Username**: `test`
+- **Password**: `test1234`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Folder Structure
 
-### Analyzing the Bundle Size
+- **src/components**: Contains reusable UI components like TaskCard, Filter, etc.
+- **src/redux**: Includes Redux setup, actions, reducers, and store configuration.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Project Workflow
+1. **Login**: Enter the credentials to access the dashboard.
+  ![image](https://github.com/user-attachments/assets/d3e2592e-2ec9-4d41-90e8-233c3a67b4a6)
 
-### Making a Progressive Web App
+2. **Add a New Task**: Click the "Add Task" button and fill in the details. All fields marked with * are required. If any required fields are empty, an error message will be displayed.
+   ![image](https://github.com/user-attachments/assets/0144ad9c-7941-4b89-8970-0c6659adbab4)
+   ![image](https://github.com/user-attachments/assets/735506ca-ba54-46bc-9a44-c5e1e4af3721)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. **Edit or Delete Tasks**: Click the "Edit" or "Delete" button on each task card to update or remove tasks.
+   ![image](https://github.com/user-attachments/assets/a2869d9c-6051-4034-be6e-0ac8d03c3f1f)
+   ![image](https://github.com/user-attachments/assets/fffd6106-62b4-4391-abbf-b01ed8b54e65)
+   ![image](https://github.com/user-attachments/assets/ca087b08-d90a-4d95-9a44-3f948a0e5a30)
 
-### Advanced Configuration
+4. **Track Time**: Click "Log time spent" to enter the amount of time spent on each task. The total time will be displayed on the task card.
+   ![image](https://github.com/user-attachments/assets/eab00ffc-b097-41ce-b8fb-57c0d4c87a08)
+   ![image](https://github.com/user-attachments/assets/9aae9914-a16e-4b00-b113-634fbc290093)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+5. **Filter Tasks**: Use the filter options to display tasks based on priority and status.
+   ![image](https://github.com/user-attachments/assets/f7d94ec3-424a-484c-a968-6883648d97e0)
 
-### Deployment
+9. **Logout**: Click the "Logout" button to log out from the dashboard.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Error Handling
 
-### `npm run build` fails to minify
+- **Empty Fields**: When adding a new task, if any mandatory fields are left empty, an error message "Field(s) missing !!" is displayed.
+  ![image](https://github.com/user-attachments/assets/092a801c-3f5c-46e6-a535-7fc7a48359e3)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Invalid Credentials**: If incorrect login credentials are entered, an error message "Invalid credentials !!" is displayed.
+  ![image](https://github.com/user-attachments/assets/4bbe0c74-b2d7-4f07-8a20-49aea7b994bf)
